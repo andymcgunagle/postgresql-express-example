@@ -10,7 +10,7 @@
 
 - Drop a database: `dropdb`
 
-- Enter a database from the command line: `psql name_of_db`
+- Connect to a database from the command line: `psql name_of_db`
 
 - Show all relations in database: `\d`
 
@@ -52,6 +52,8 @@
 
 ### Create a table:
 
+- [PostgreSQL data types](https://www.postgresql.org/docs/current/datatype.html)
+
 ```sql
 CREATE TABLE users (
   id SERIAl PRIMARY KEY,
@@ -68,26 +70,11 @@ CREATE TABLE users (
 DROP TABLE users;
 ```
 
-### Insert values into a table:
+### Add a column:
 
 ```sql
-INSERT INTO users (first_name, last_name, age, email)
-VALUES ('Andy', 'McUser', 30, 'andy@mcuser.com');
-```
-
-### Select all data in all columns a table:
-
-```sql
-SELECT *
-FROM users;
-```
-
-### Select data from a few specific columns in a table:
-
-```sql
-SELECT first_name,
-  last_name
-FROM users;
+ALTER TABLE users
+ADD COLUMN age INT;
 ```
 
 ### Drop a column:
@@ -97,11 +84,63 @@ ALTER TABLE users
 DROP COLUMN age;
 ```
 
-### Add a column:
+### Insert values into a table:
 
 ```sql
-ALTER TABLE users
-ADD COLUMN age INT;
+INSERT INTO users (first_name, last_name, age, email)
+VALUES ('Andy', 'McUser', 30, 'andy@mcuser.com');
+```
+
+### Select all data in all columns a table:
+
+- [The FROM Clause](https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-FROM): The FROM clause derives a table from one or more other tables given in a comma-separated table reference list.
+
+```sql
+SELECT *
+FROM users;
+```
+
+### Select data from a few specific columns in a table:
+
+- [The WHERE Clause](https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-WHERE): If the WHERE clause is specified, all rows that do not satisfy the condition are eliminated from the output.
+
+```sql
+SELECT first_name, last_name
+FROM users
+WHERE id = 3
+```
+
+```sql
+SELECT first_name, last_name
+FROM users
+WHERE (city_living_in = 'San Diego')
+AND (city_from = 'Sonoma' OR city_from = 'San Luis Obispo');
+```
+
+### Select ordered data:
+
+- [Sorting Rows](https://www.postgresql.org/docs/9.5/queries-order.html): If the ORDER BY clause is specified, the returned rows are sorted in the specified order. If ORDER BY is not given, the rows are returned in whatever order the system finds fastest to produce.
+
+```sql
+SELECT first_name
+FROM users
+ORDER BY first_name;
+```
+
+```sql
+SELECT last_name
+FROM users
+ORDER BY last_name DESC;
+```
+
+### Eliminate duplicate rows from the result:
+
+- [The DISTINCT Clause](https://www.postgresql.org/docs/13/sql-select.html#SQL-DISTINCT): If SELECT DISTINCT is specified, all duplicate rows are removed from the result set.
+
+```sql
+SELECT DISTINCT city_living_in
+FROM users
+ORDER BY city_living_in;
 ```
 
 ## PostgreSQL and Express
