@@ -196,7 +196,7 @@ app.post('/todos', async (req, res) => {
   try {
     const { description } = req.body;
 
-    const newTodo = await pool.query('INSERT INTO todo (description) VALUES ($1) RETURNING *', [description]);
+    const newTodo = await pool.query('INSERT INTO todos (description) VALUES ($1) RETURNING *', [description]);
 
     res.status(200).json(newTodo.rows[0]);
   } catch (error) {
@@ -208,7 +208,7 @@ app.post('/todos', async (req, res) => {
 // @route GET /todos
 app.get('/todos', async (req, res) => {
   try {
-    const allTodos = await pool.query('SELECT * FROM todo');
+    const allTodos = await pool.query('SELECT * FROM todos');
 
     res.status(200).json(allTodos.rows);
   } catch (error) {
@@ -222,7 +222,7 @@ app.get('/todos/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
-    const todo = await pool.query('SELECT description FROM todo WHERE id = ($1)', [id]);
+    const todo = await pool.query('SELECT description FROM todos WHERE id = ($1)', [id]);
 
     res.status(200).json(todo.rows[0]);
   } catch (error) {
@@ -236,7 +236,7 @@ app.put('/todos/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
-    const newTodo = await pool.query('UPDATE todo SET description = ($1) WHERE id = ($2) RETURNING *', [description, id]);
+    const newTodo = await pool.query('UPDATE todos SET description = ($1) WHERE id = ($2) RETURNING *', [description, id]);
 
     res.status(200).json(newTodo.rows[0]);
   } catch (error) {
@@ -250,7 +250,7 @@ app.delete('/todos/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
-    const remainingTodos = await pool.query('DELETE FROM todo WHERE id = ($1) RETURNING *', [id]);
+    const remainingTodos = await pool.query('DELETE FROM todos WHERE id = ($1) RETURNING *', [id]);
 
     res.status(200).json(remainingTodos.rows[0]);
   } catch (error) {
