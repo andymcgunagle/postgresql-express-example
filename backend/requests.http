@@ -5,7 +5,7 @@ POST http://localhost:8080/todos
 content-type: application/json
 
 {
-  "description": "Yet another thing I need to do!"
+  "description": "Yet another thing to do!"
 }
 
 
@@ -14,11 +14,11 @@ GET http://localhost:8080/todos
 
 
 ### Get specific todo
-GET http://localhost:8080/todos/11
+GET http://localhost:8080/todos/3
 
 
 ### Update todo
-PUT http://localhost:8080/todos/11
+PUT http://localhost:8080/todos/3
 content-type: application/json
 
 {
@@ -27,4 +27,4 @@ content-type: application/json
 
 
 ### Delete todo
-DELETE http://localhost:8080/todos/11
+DELETE http://localhost:8080/todos/3
