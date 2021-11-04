@@ -148,8 +148,8 @@ const PORT = 8080;
 
 app.use(express.json());
 
-// @route POST /post-todo
-app.post('/post-todo', async (req, res) => {
+// @route POST /todos
+app.post('/todos', async (req, res) => {
   try {
     const { description } = req.body;
 
@@ -162,8 +162,8 @@ app.post('/post-todo', async (req, res) => {
   }
 });
 
-// @route GET /get-todos
-app.get('/get-todos', async (req, res) => {
+// @route GET /todos
+app.get('/todos', async (req, res) => {
   try {
     const allTodos = await pool.query('SELECT * FROM todo');
 
@@ -174,8 +174,8 @@ app.get('/get-todos', async (req, res) => {
   }
 });
 
-// @route GET /get-todo/:id
-app.get('/get-todo/:id', async (req, res) => {
+// @route GET /todos/:id
+app.get('/todos/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -188,8 +188,8 @@ app.get('/get-todo/:id', async (req, res) => {
   }
 });
 
-// @route PUT /update-todo/:id
-app.put('/update-todo/:id', async (req, res) => {
+// @route PUT /todos/:id
+app.put('/todos/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -202,8 +202,8 @@ app.put('/update-todo/:id', async (req, res) => {
   }
 });
 
-// @route DELETE /delete-todo/:id
-app.delete('/delete-todo/:id', async (req, res) => {
+// @route DELETE /todos/:id
+app.delete('/todos/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -232,3 +232,7 @@ app.listen(PORT, () => {
 - [SQL Syntax](https://en.wikipedia.org/wiki/SQL_syntax)
 
 - [Build restful API with PostgreSQL and Express](https://www.youtube.com/watch?v=_Mun4eOOf2Q)
+
+- [Learn PostgreSQL Tutorial - Full Course for Beginners](https://www.youtube.com/watch?v=qw--VYLpxG4)
+
+- [Database Design Course - Learn how to design and plan a database for beginners](https://www.youtube.com/watch?v=ztHopE5Wnpc)
