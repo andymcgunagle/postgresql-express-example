@@ -4,7 +4,7 @@
 
 - List all databases: `psql -l`
 
-- There are three default databases already listed - postgres, template0, and template1
+- There are three default databases already listed - **postgres**, **template0**, and **template1**
 
 - Create a database: `createdb`
 
@@ -22,11 +22,13 @@
 
 ## SQLTools in Visual Studio Code
 
+- Install SQLTools extension in Visual Studio Code
+
 - Add new connection
 
-- Give the connection a name (name_of_db@localhost, for example)
+- Give the connection a name (**name_of_db@localhost**, for example)
 
-- Specify the database to connect to (created from the command line using createdb)
+- Specify the database to connect to (created from the command line using `createdb`)
 
 - Specify the user
 
@@ -34,9 +36,9 @@
 
 - Test connection, then connect - a new connectionName.session.sql file will be generated
 
-- --@block will create blocks to run individual blocks of commands in your session.sql file
+- `--@block` will create blocks to run individual blocks of commands in your session.sql file
 
-## SQL commands
+## SQL Commands
 
 ### General Reminders:
 
@@ -221,22 +223,12 @@ app.listen(PORT, () => {
 
 ## Resources
 
-### Installing postgresql with Homebrew
+- [Installing postgresql with Homebrew](https://formulae.brew.sh/formula/postgresql)
 
-https://formulae.brew.sh/formula/postgresql
+- [How to completely uninstall and reinstall Homebrew Postgres](https://blog.testdouble.com/posts/2021-01-28-how-to-completely-uninstall-homebrew-postgres/)
 
-### How to completely uninstall and reinstall Homebrew Postgres
+- [SQL Tutorial for Beginners](https://www.youtube.com/watch?v=tp_5c6jaNQE)
 
-https://blog.testdouble.com/posts/2021-01-28-how-to-completely-uninstall-homebrew-postgres/
+- [SQL Syntax](https://en.wikipedia.org/wiki/SQL_syntax)
 
-### SQL Tutorial for Beginners
-
-https://www.youtube.com/watch?v=tp_5c6jaNQE
-
-### SQL Syntax
-
-https://en.wikipedia.org/wiki/SQL_syntax
-
-### Build restful API with PostgreSQL and Express
-
-https://www.youtube.com/watch?v=_Mun4eOOf2Q
+- [Build restful API with PostgreSQL and Express](https://www.youtube.com/watch?v=_Mun4eOOf2Q)
