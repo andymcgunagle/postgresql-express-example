@@ -14,7 +14,7 @@
 
 - Show all relations in database: `\d`
 
-- Show all tables in database: `dt`
+- Show all tables in database: `\dt`
 
 - Show a table in the database: `SELECT * from table_name;`
 
@@ -93,7 +93,8 @@ FROM users;
 ### Drop a column:
 
 ```sql
-ALTER TABLE users DROP COLUMN age;
+ALTER TABLE users
+DROP COLUMN age;
 ```
 
 ### Add a column:
@@ -116,7 +117,10 @@ ADD COLUMN age INT;
 ### Create table from terminal (or SQLTools file)
 
 ```sql
-CREATE TABLE todo(id SERIAL PRIMARY KEY, description VARCHAR(255));
+CREATE TABLE todo(
+  id SERIAL PRIMARY KEY,
+  description VARCHAR(255)
+);
 ```
 
 ### Create pool to connect to database
