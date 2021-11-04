@@ -153,7 +153,7 @@ ORDER BY city_living_in;
 
 ### Create database from terminal
 
-`createdb todo_database`
+`createdb todos_database`
 
 ### Create table from terminal (or SQLTools file)
 
