@@ -1,6 +1,6 @@
 import express from 'express';
 import PrettyError from 'pretty-error';
-import pool from './todoDatabasePool.js';
+import pool from './todosDatabasePool.js';
 
 const pe = new PrettyError();
 

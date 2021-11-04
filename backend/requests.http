@@ -5,7 +5,7 @@ POST http://localhost:8080/todos
 content-type: application/json
 
 {
-  "description": "Yet another thing to do!"
+  "description": "My #5 todo!"
 }
 
 

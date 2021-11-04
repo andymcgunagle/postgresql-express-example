@@ -143,9 +143,11 @@ FROM users
 ORDER BY city_living_in;
 ```
 
-## PostgreSQL and Express
+## PostgreSQL and express
 
-### Install Express and pg
+### Initialize project and install [express](https://www.npmjs.com/package/express) and [pg](https://www.npmjs.com/package/pg)
+
+`npm init -y`
 
 `npm i express pg`
 
@@ -156,7 +158,7 @@ ORDER BY city_living_in;
 ### Create table from terminal (or SQLTools file)
 
 ```sql
-CREATE TABLE todo(
+CREATE TABLE todos(
   id SERIAL PRIMARY KEY,
   description VARCHAR(255)
 );
@@ -169,7 +171,7 @@ import pg from 'pg';
 
 const pool = new pg.Pool({
   user: 'yourUserName',
-  database: 'todo_database',
+  database: 'todos_database',
   host: 'localhost',
   port: 5432,
 });
@@ -182,7 +184,7 @@ export default pool;
 ```javascript
 import express from 'express';
 import PrettyError from 'pretty-error';
-import pool from './todoDatabasePool.js';
+import pool from './todosDatabasePool.js';
 
 const pe = new PrettyError();
 

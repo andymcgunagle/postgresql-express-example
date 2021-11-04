@@ -5,8 +5,8 @@
       "server": "localhost",
       "port": 5432,
       "driver": "PostgreSQL",
-      "name": "todo_database@localhost",
-      "database": "todo_database",
+      "name": "todos_database@localhost",
+      "database": "todos_database",
       "username": "andrewmcgunagle",
       "password": ""
     }
