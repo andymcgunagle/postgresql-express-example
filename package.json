@@ -1,0 +1,22 @@
+{
+  "name": "postgresql-express-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ./backend/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "pretty-error": "^4.0.0"
+  },
+  "devDependencies": {
+    "express-router-generator": "^1.0.4"
+  }
+}

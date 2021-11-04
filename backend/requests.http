@@ -1,0 +1,30 @@
+### Install REST Client extension for Visual Studio Code to use this file
+
+### Post todo
+POST http://localhost:8080/post-todo
+content-type: application/json
+
+{
+  "description": "A sixth thing I need to do!"
+}
+
+
+### Get all todos
+GET http://localhost:8080/get-todos
+
+
+### Get specific todo
+GET http://localhost:8080/get-todo/4
+
+
+### Update todo
+PUT http://localhost:8080/update-todo/4
+content-type: application/json
+
+{
+  "description": "Did this work?"
+}
+
+
+### Delete todo
+DELETE http://localhost:8080/delete-todo/9
