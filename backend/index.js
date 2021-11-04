@@ -9,8 +9,8 @@ const PORT = 8080
 
 app.use(express.json());
 
-// @route POST /post-todo
-app.post('/post-todo', async (req, res) => {
+// @route POST /todos
+app.post('/todos', async (req, res) => {
   try {
     const { description } = req.body;
 
@@ -26,8 +26,8 @@ app.post('/post-todo', async (req, res) => {
   };
 });
 
-// @route GET /get-todos
-app.get('/get-todos', async (req, res) => {
+// @route GET /todos
+app.get('/todos', async (req, res) => {
   try {
     const allTodos = await pool.query(
       "SELECT * FROM todo",
@@ -40,13 +40,13 @@ app.get('/get-todos', async (req, res) => {
   };
 });
 
-// @route GET /get-todo/:id
-app.get('/get-todo/:id', async (req, res) => {
+// @route GET /todos/:id
+app.get('/todos/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
     const todo = await pool.query(
-      "SELECT description FROM todo WHERE id = ($1)",
+      "SELECT description FROM todo WHERE id = $1",
       [id]
     );
 
@@ -57,14 +57,14 @@ app.get('/get-todo/:id', async (req, res) => {
   };
 });
 
-// @route PUT /update-todo/:id
-app.put('/update-todo/:id', async (req, res) => {
+// @route PUT /todos/:id
+app.put('/todos/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { description } = req.body;
 
     const newTodo = await pool.query(
-      "UPDATE todo SET description = ($1) WHERE id = ($2) RETURNING *",
+      "UPDATE todo SET description = $1 WHERE id = $2 RETURNING *",
       [description, id],
     );
 
@@ -75,13 +75,13 @@ app.put('/update-todo/:id', async (req, res) => {
   };
 });
 
-// @route DELETE /delete-todo/:id
-app.delete('/delete-todo/:id', async (req, res) => {
+// @route DELETE /todos/:id
+app.delete('/todos/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
     const remainingTodos = await pool.query(
-      "DELETE FROM todo WHERE id = ($1) RETURNING *",
+      "DELETE FROM todo WHERE id = $1 RETURNING *",
       [id]
     );
 
