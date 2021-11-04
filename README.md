@@ -2,51 +2,51 @@
 
 ## PostgreSQL from the Command Line
 
-List all databases: `psql -l`
+- List all databases: `psql -l`
 
-There are three default databases already listed - postgres, template0, and template1
+- There are three default databases already listed - postgres, template0, and template1
 
-Create a database: `createdb`
+- Create a database: `createdb`
 
-Drop a database: `dropdb`
+- Drop a database: `dropdb`
 
-Enter a database from the command line: `psql name_of_db`
+- Enter a database from the command line: `psql name_of_db`
 
-Show all relations in database: `\d`
+- Show all relations in database: `\d`
 
-Show all tables in database: `dt`
+- Show all tables in database: `dt`
 
-Show a table in the database: `SELECT * from table_name;`
+- Show a table in the database: `SELECT * from table_name;`
 
-Exit psql database interface: `\q`
+- Exit psql database interface: `\q`
 
 ## SQLTools in Visual Studio Code
 
-Add new connection
+- Add new connection
 
-Give the connection a name (name_of_db@localhost, for example)
+- Give the connection a name (name_of_db@localhost, for example)
 
-Specify the database to connect to (created from the command line using createdb)
+- Specify the database to connect to (created from the command line using createdb)
 
-Specify the user
+- Specify the user
 
-Use empty password (for now)
+- Use empty password (for now)
 
-Test connection, then connect - a new connectionName.session.sql file will be generated
+- Test connection, then connect - a new connectionName.session.sql file will be generated
 
---@block will create blocks to run individual blocks of commands in your session.sql file
+- --@block will create blocks to run individual blocks of commands in your session.sql file
 
 ## SQL commands
 
 ### General Reminders:
 
-SQL KEYWORDS UPPER CASE BY CONVENTION
+- SQL KEYWORDS UPPER CASE BY CONVENTION
 
-identifiers_lower_snake_case_by_convention
+- identifiers_lower_snake_case_by_convention
 
-Add a semicolon at the end of each command;
+- Add a semicolon at the end of each command;
 
-(Don't, add, trailing, commas)
+- (Don't, add, trailing, commas)
 
 ### Create a table:
 
