@@ -5,7 +5,7 @@ POST http://localhost:8080/todos
 content-type: application/json
 
 {
-  "description": "My #5 todo!"
+  "description": "My todo!"
 }
 
 
@@ -22,7 +22,7 @@ PUT http://localhost:8080/todos/3
 content-type: application/json
 
 {
-  "description": "Did this work?"
+  "description": "Another todo..."
 }
 
 

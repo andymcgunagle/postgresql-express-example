@@ -155,7 +155,7 @@ ORDER BY city_living_in;
 
 `createdb todos_database`
 
-### Create table from terminal (or SQLTools file)
+### Create table from terminal (or SQLTools **session.sql** file)
 
 ```sql
 CREATE TABLE todos(
